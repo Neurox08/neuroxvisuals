@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeuroX Clean Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroX Photography</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="light-mode">
   <header>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
     <h1>NeuroX Photography</h1>
     <button onclick="toggleTheme()">Toggle Theme</button>
-    <input type="text" id="searchInput" onkeyup="searchImages()" placeholder="Search by tag..."/>
+    <input type="text" id="searchInput" onkeyup="searchImages()" placeholder="Search by tag...">
   </header>
 
   <nav id="sidebar" class="hidden">
@@ -24,8 +24,16 @@
   </nav>
 
   <main id="gallery">
-    <div class="photo" data-tags="nature">
-      <img src="images/sample.jpg" alt="Sample" loading="lazy">
+    <div class="photo" data-tags="nature waterfall">
+      <img src="images/waterfall.jpg" alt="Waterfall" loading="lazy">
+      <button class="download-btn" onclick="downloadImage('images/waterfall.jpg')">Download</button>
+    </div>
+    <div class="photo" data-tags="mountain snow">
+      <img src="images/mountain.jpg" alt="Mountain" loading="lazy">
+    </div>
+    <div class="photo" data-tags="city night">
+      <img src="images/city.jpg" alt="City" loading="lazy">
+      <button class="download-btn" onclick="downloadImage('images/city.jpg')">Download</button>
     </div>
   </main>
 
@@ -45,11 +53,20 @@
 
     function searchImages() {
       const input = document.getElementById("searchInput").value.toLowerCase();
-      const photos = document.querySelectorAll(".photo");
-      photos.forEach(photo => {
+      const images = document.querySelectorAll("#gallery .photo");
+      images.forEach(photo => {
         const tags = photo.getAttribute("data-tags").toLowerCase();
         photo.style.display = tags.includes(input) ? "block" : "none";
       });
+    }
+
+    function downloadImage(url) {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = url.split("/").pop();
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   </script>
 </body>
