@@ -1,5 +1,5 @@
 
-# 📸 NeuroX Photography Portfolio
+ 📸 NeuroX Photography Portfolio
 
 Welcome to my photography portfolio website, built and hosted using **GitHub Pages**.
 
@@ -25,8 +25,4 @@ Welcome to my photography portfolio website, built and hosted using **GitHub Pag
 Add to `images/` folder and include in `index.html` like this:
 
 ```html
-<div class="photo" data-tags="example tag">
-  <img src="images/yourphoto.jpg" alt="Your Alt Text" loading="lazy">
-  <button class="download-btn" onclick="downloadImage('images/yourphoto.jpg')">Download</button>
-</div>
-```
+<div class="photo" data-tags="example tag"
