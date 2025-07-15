@@ -1,41 +1,32 @@
+
 # 📸 NeuroX Photography Portfolio
 
-Welcome to my photography portfolio website.  
-This site showcases my work in various photography categories with a clean, responsive layout and powerful features for both users and photographers.
+Welcome to my photography portfolio website, built and hosted using **GitHub Pages**.
 
 🔗 **Live Site:** [https://neurox08.github.io](https://neurox08.github.io)
 
----
-
 ## 🎯 Features
 
-- ✅ Fully responsive layout for desktop and mobile
-- 🌙 Dark/Light theme toggle
-- 🔍 Search bar to filter images by tags
-- 🖼️ Lazy loading for faster image performance
-- ⬇️ Optional download button per photo
-- 📂 Organized gallery by categories
-- 📱 Hamburger menu navigation
-- 🧭 Portfolio-ready structure for future expansion
+- Responsive layout
+- Dark/Light theme toggle
+- Search by tags
+- Lazy loading
+- Optional download buttons
+- Hamburger menu navigation
+- Portfolio-ready structure
 
----
+## 🧰 Tech
 
-## 🧰 Tech Stack
+- HTML + CSS + JavaScript
+- GitHub Pages for hosting
 
-- **HTML5**
-- **CSS3**
-- **JavaScript (Vanilla)**
-- Hosted via **GitHub Pages**
+## 📁 How to Add Photos
 
----
-
-## 📁 How to Use / Edit
-
-1. Upload your images into the `images/` folder.
-2. In `index.html`, add your image like this:
+Add to `images/` folder and include in `index.html` like this:
 
 ```html
-<div class="photo" data-tags="nature sunset">
-  <img src="images/sunset.jpg" alt="Sunset" loading="lazy">
-  <button class="download-btn" onclick="downloadImage('images/sunset.jpg')">Download</button>
+<div class="photo" data-tags="example tag">
+  <img src="images/yourphoto.jpg" alt="Your Alt Text" loading="lazy">
+  <button class="download-btn" onclick="downloadImage('images/yourphoto.jpg')">Download</button>
 </div>
+```
