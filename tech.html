@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech Gallery</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    img {
+      width: 100%;
+      max-width: 400px;
+      margin: 10px;
+      border: 2px solid white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tech Gallery</h1>
+  <a href="../index.html">← Back</a>
+  <div>
+    <img src="../images/tech1.jpg" onclick="openFull(this.src)" />
+    <img src="../images/tech2.jpg" onclick="openFull(this.src)" />
+  </div>
+
+  <script>
+    function openFull(src) {
+      window.open(src, "_blank");
+    }
+  </script>
+</body>
+</html>
