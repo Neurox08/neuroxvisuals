@@ -3,7 +3,7 @@
 
 Welcome to my photography portfolio website, built and hosted using **GitHub Pages**.
 
-🔗 **Live Site:** [https://neurox08.github.io](https://neurox08.github.io)
+🔗 **Live Site:** [https://neurox08.github.io/neuroxvisuals/)
 
 ## 🎯 Features
 
