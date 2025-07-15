@@ -3,71 +3,95 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .header {
-  background: #333;
+  background-color: #444;
   color: white;
   padding: 10px;
-  display: flex;
-  align-items: center;
+  text-align: center;
+  position: relative;
 }
+
 .menu-icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
   font-size: 24px;
   cursor: pointer;
-  margin-right: 10px;
 }
+
 .sidebar {
   height: 100%;
-  width: 0;
+  width: 250px;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
-  left: 0;
+  left: -250px;
   background-color: #111;
   overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+  transition: 0.3s;
+  padding-top: 20px;
 }
+
+.sidebar.active {
+  left: 0;
+}
+
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 10px 30px;
   text-decoration: none;
   font-size: 18px;
   color: white;
   display: block;
-  transition: 0.3s;
 }
-.sidebar a:hover {
-  background-color: #575757;
-}
-.sidebar.active {
-  width: 250px;
-}
-.closebtn {
+
+.sidebar .closebtn {
   position: absolute;
   top: 0;
-  right: 20px;
-  font-size: 30px;
+  right: 10px;
+  font-size: 36px;
 }
-.controls {
-  padding: 10px;
-}
-.dark {
-  background-color: #121212;
-  color: white;
-}
-.gallery {
-  padding: 10px;
-}
-footer {
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-}
-.download-btn {
-  background: black;
+
+.menu-toggle-btn {
+  background-color: #333;
   color: white;
   border: none;
-  padding: 6px 12px;
-  margin: 5px;
+  margin: 10px 30px;
+  padding: 8px 12px;
   cursor: pointer;
+  font-size: 16px;
+}
+
+.controls {
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.dark {
+  background-color: #222;
+  color: white;
+}
+
+.dark .header {
+  background-color: #000;
+}
+
+.dark .sidebar {
+  background-color: #000;
+}
+
+.dark .menu-toggle-btn {
+  background-color: #555;
 }
