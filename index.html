@@ -3,60 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeuroX Photography</title>
+  <title>NeuroX Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="sidebar" id="sidebar">
-    <a href="#" class="closebtn" onclick="toggleSidebar()">×</a>
-    <a href="#">Home</a>
-    <a href="#">Portfolio</a>
-    <a href="#">Contact</a>
-    <button onclick="toggleTheme()" class="menu-toggle-btn">Toggle Theme</button>
-  </div>
-
-  <div class="header">
-    <span class="menu-icon" onclick="toggleSidebar()">☰</span>
+  <header>
     <h1>NeuroX Photography</h1>
-  </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Nature</a>
+      <a href="#">Urban</a>
+      <a href="#">Portraits</a>
+    </nav>
+  </header>
 
-  <div class="controls">
-    <input type="text" id="searchInput" placeholder="Search by tag..." onkeyup="searchImages()">
-  </div>
+  <section class="gallery" id="gallery">
+    <div class="photo" data-category="nature">
+      <img src="images/nature1.jpg" alt="Nature" onclick="openLightbox(this)">
+      <button onclick="downloadImage('images/nature1.jpg')">Download</button>
+    </div>
+    <div class="photo" data-category="urban">
+      <img src="images/urban1.jpg" alt="Urban" onclick="openLightbox(this)">
+    </div>
+    <div class="photo" data-category="portraits">
+      <img src="images/portrait1.jpg" alt="Portrait" onclick="openLightbox(this)">
+      <button onclick="downloadImage('images/portrait1.jpg')">Download</button>
+    </div>
+  </section>
 
-  <div class="gallery" id="gallery">
-    <!-- Photo cards -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded View">
   </div>
 
   <footer>
-    <p>© 2025 NeuroX Photography</p>
+    <div class="social">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+    </div>
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID" />
+      <button type="submit" class="donate-btn">Donate</button>
+    </form>
+    <p>&copy; 2025 NeuroX Photography</p>
   </footer>
 
   <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.classList.toggle("active");
+    function openLightbox(img) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
     }
 
-    document.addEventListener("click", function(event) {
-      const sidebar = document.getElementById("sidebar");
-      const icon = document.querySelector(".menu-icon");
-      if (!sidebar.contains(event.target) && !icon.contains(event.target)) {
-        sidebar.classList.remove("active");
-      }
-    });
-
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-    }
-
-    function searchImages() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const images = document.querySelectorAll(".photo");
-      images.forEach(img => {
-        const tags = img.getAttribute("data-tags");
-        img.style.display = tags.includes(input) ? "block" : "none";
-      });
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
     }
 
     function downloadImage(url) {

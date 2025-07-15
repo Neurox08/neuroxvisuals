@@ -1,97 +1,81 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
+  background: #fff;
+  color: #333;
 }
-
-.header {
-  background-color: #444;
+header {
+  background: #222;
   color: white;
-  padding: 10px;
+  padding: 1em;
   text-align: center;
+}
+header nav a {
+  margin: 0 1em;
+  color: white;
+  text-decoration: none;
+}
+.gallery {
+  columns: 3 200px;
+  column-gap: 1em;
+  padding: 1em;
+}
+.photo {
+  margin-bottom: 1em;
   position: relative;
 }
-
-.menu-icon {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  font-size: 24px;
+.photo img {
+  width: 100%;
+  border-radius: 8px;
   cursor: pointer;
 }
-
-.sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: -250px;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 20px;
-}
-
-.sidebar.active {
-  left: 0;
-}
-
-.sidebar a {
-  padding: 10px 30px;
-  text-decoration: none;
-  font-size: 18px;
-  color: white;
-  display: block;
-}
-
-.sidebar .closebtn {
+.photo button {
   position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 36px;
-}
-
-.menu-toggle-btn {
-  background-color: #333;
+  bottom: 8px;
+  right: 8px;
+  background: black;
   color: white;
   border: none;
-  margin: 10px 30px;
-  padding: 8px 12px;
+  padding: 5px 10px;
   cursor: pointer;
-  font-size: 16px;
+  border-radius: 5px;
 }
-
-.controls {
-  padding: 20px;
-  text-align: center;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
   justify-content: center;
+  align-items: center;
 }
-
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 4px solid white;
+}
 footer {
   text-align: center;
-  padding: 10px;
-  background-color: #eee;
+  background: #f4f4f4;
+  padding: 1em;
 }
-
-.dark {
-  background-color: #222;
+.social a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #555;
+}
+.donate-btn {
+  background: #0070ba;
   color: white;
+  padding: 8px 16px;
+  border: none;
+  margin-top: 1em;
+  cursor: pointer;
+  border-radius: 5px;
 }
-
-.dark .header {
-  background-color: #000;
-}
-
-.dark .sidebar {
-  background-color: #000;
-}
-
-.dark .menu-toggle-btn {
-  background-color: #555;
+@media (max-width: 600px) {
+  .gallery {
+    columns: 1 100%;
+  }
 }
