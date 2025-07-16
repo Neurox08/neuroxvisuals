@@ -3,32 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeuroX Gallery</title>
+  <title>NeuroX Photography</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
+    <div class="menu-icon" onclick="toggleSidebar()">☰</div>
     <h1>NeuroX Photography</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Nature</a>
-      <a href="#">Urban</a>
-      <a href="#">Portraits</a>
-    </nav>
   </header>
 
+  <div class="sidebar" id="sidebar">
+    <a href="#" onclick="toggleSidebar()">×</a>
+    <a href="index.html">🏠 Home</a>
+    <button onclick="toggleTheme()">🌗 Toggle Theme</button>
+  </div>
+
   <section class="gallery" id="gallery">
-    <div class="photo" data-category="nature">
-      <img src="images/nature1.jpg" alt="Nature" onclick="openLightbox(this)">
-      <button onclick="downloadImage('images/nature1.jpg')">Download</button>
-    </div>
-    <div class="photo" data-category="urban">
-      <img src="images/urban1.jpg" alt="Urban" onclick="openLightbox(this)">
-    </div>
-    <div class="photo" data-category="portraits">
-      <img src="images/portrait1.jpg" alt="Portrait" onclick="openLightbox(this)">
-      <button onclick="downloadImage('images/portrait1.jpg')">Download</button>
-    </div>
+    <!-- Add your photo categories here -->
   </section>
 
   <div id="lightbox" onclick="closeLightbox()">
@@ -49,6 +40,14 @@
   </footer>
 
   <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+
     function openLightbox(img) {
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
