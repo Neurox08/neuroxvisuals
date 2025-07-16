@@ -107,3 +107,37 @@ footer {
     columns: 1 100%;
   }
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #333;
+}
+header {
+  background: #222;
+  color: white;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+.menu-icon {
+  font-size: 24px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0; left: -250px;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 10;
+}
+.sidebar.active {
+  left: 0;
+}
+.sidebar a, .sidebar button {
+  padding: 10px
