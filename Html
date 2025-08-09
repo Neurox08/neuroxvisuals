@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neurox Visuals</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">Neurox Visuals</div>
+  <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#donate">Donate</a></li>
+    <li><button onclick="toggleTheme()">🌙 / ☀️</button></li>
+  </ul>
+</nav>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery">
+  <!-- Example image -->
+  <div class="image-card">
+    <img src="images/sample1.jpg" alt="Sample Image" onclick="openLightbox(this)">
+    <a href="images/sample1.jpg" download class="download-btn">Download</a>
+  </div>
+</section>
+
+<!-- Donation Section -->
+<section id="donate" class="donate">
+  <h2>Support Us</h2>
+  <p>If you like our work, consider donating to keep the website alive!</p>
+  <a href="https://www.paypal.com/donate" target="_blank" class="donate-btn">Donate Now</a>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img id="lightboxImage" src="" alt="Full View">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
